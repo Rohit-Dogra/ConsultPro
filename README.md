@@ -1,10 +1,10 @@
-# Expertisestation
+# ConsultPro
 
 > Your premier destination for professional expertise, knowledge sharing, and skill development.
 
 ## 🌟 About
 
-Expertisestation is a cutting-edge platform that connects professionals with industry experts across various domains. Our mission is to empower businesses and individuals by providing strategic insights, expert advice, and customized solutions tailored to their unique needs.
+ConsultPro is a cutting-edge platform that connects professionals with industry experts across various domains. Our mission is to empower businesses and individuals by providing strategic insights, expert advice, and customized solutions tailored to their unique needs.
 
 ## 🚀 Features
 
@@ -32,10 +32,10 @@ Expertisestation is a cutting-edge platform that connects professionals with ind
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-org/expertisestation.git
+git clone https://github.com/your-org/ConsultPro.git
 
 # Navigate to project directory
-cd expertisestation
+cd ConsultPro
 
 # Install dependencies
 npm install
@@ -65,7 +65,7 @@ npm run lint         # Run ESLint
 
 ## 🌐 Live Demo
 
-Visit [expertisestation.com](https://expertisestation.com) to see the platform in action.
+Visit [ConsultPro.com](https://ConsultPro.com) to see the platform in action.
 
 ## 📊 Key Metrics
 
@@ -88,9 +88,9 @@ This project is proprietary software owned by Brenstoneinternational.
 
 ## 📞 Contact
 
-- **Website**: [expertisestation.com](https://expertisestation.com)
+- **Website**: [ConsultPro.com](https://ConsultPro.com)
 - **Email**: info@xpertisestation.com
 - **Support**: Available through platform
 
 
-© 2024 Expertisestation. All rights reserved.
+© 2024 ConsultPro. All rights reserved.
