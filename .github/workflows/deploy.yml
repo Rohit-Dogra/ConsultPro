@@ -1,0 +1,55 @@
+name: Build Vite and deploy dist contents only
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build Vite
+        run: npm run build
+
+      - name: Deploy ONLY dist contents to deploy branch
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+
+          # Save dist safely
+          mv dist /tmp/dist
+
+          # Create clean deploy branch
+          git checkout --orphan deploy
+
+          # Remove EVERYTHING (tracked + untracked)
+          rm -rf *
+
+          # Restore dist contents to repo root (including dotfiles)
+          shopt -s dotglob
+          cp -r /tmp/dist/* .
+          rm -f .env .env.* */.env */.env.*
+          # Prevent GitHub Pages processing
+          touch .nojekyll
+
+          git add .
+          git commit -m "deploy: dist only"
+          git push -f https://x-access-token:${GITHUB_TOKEN}@github.com/Expertisestation/exp1306.git deploy

@@ -1,0 +1,221 @@
+/* Set the entire page background to white and text to dark */
+body {
+    background-color: white !important;
+    color: #222 !important;
+  }
+  
+  /* About Section */
+  .about-container {
+    text-align: center;
+    padding: 60px 8%;
+    background-color: white !important;
+    padding-top: 80px; /* Pushes content below fixed navbar */
+    display: relative;
+    color: #222 !important;
+  }
+  
+  /* About Us Container */
+  .about-us-container {
+    background: white; /* White background for the box */
+    padding: 20px; /* Inner spacing */
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    max-width: 900px; /* Restrict width */
+    margin: 30px auto; /* Center it */
+    border: 1px solid #ddd; /* Light border */
+    display: relative;
+    color: #222;
+  }
+  
+  .about-us-container p {
+    color: #222;
+    text-align: left;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .about-us-container {
+      padding: 30px;
+      width: 90%;
+      display: relative;
+    }
+  }
+  
+  /* Headings */
+  .about-heading,
+  .section-heading,
+  .stat-card h3,
+  .team-card h3 {
+    font-size: 3.5rem;
+    font-weight: bold;
+    line-height: 1.3;
+    color: #222 !important;
+  }
+  
+  .about-subtext {
+    font-size: 1.5rem;
+    color: #444;
+    margin: 15px auto;
+    max-width: 750px;
+    line-height: 1.5;
+  }
+  
+  /* Highlighted text */
+  .highlight {
+    color: #0A78FF !important;
+  }
+  
+  /* Stats Section */
+  .stats-section {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin: 10px 0;
+  }
+  
+  .stat-card {
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .stat-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .stat-card i {
+    font-size: 2.5rem;
+    color: black;
+  }
+  
+  .stat-card h3 {
+    font-size: 1.8rem;
+    margin: 10px 0;
+    color: #222;
+  }
+  
+  /* Values Section */
+  .values-section {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 50px 0;
+  }
+  
+  .value-card {
+    background: white;
+    padding: 25px;
+    width: 22%;
+    min-width: 220px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+    color: #222 !important;
+  }
+  
+  .value-card:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Team Section */
+  .team-section {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+  }
+  
+  .team-card {
+    text-align: center;
+    width: 180px;
+    padding: 10px;
+  }
+  
+  .team-card img {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #222;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .team-card img:hover {
+    transform: scale(1.1);
+  }
+  
+  .team-card h3 {
+    margin-top: 12px;
+    font-size: 1.3rem;
+    color: #222 !important;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .about-heading {
+      font-size: 2.2rem;
+    }
+    .stats-section {
+      gap: 30px;
+    }
+    .values-section {
+      flex-direction: column;
+      align-items: center;
+    }
+    .value-card {
+      width: 80%;
+      margin-bottom: 20px;
+    }
+    .team-section {
+      gap: 20px;
+    }
+  }
+  
+  /* Social Links */
+  .social-links {
+    position: fixed; /* Fixed position on the left */
+    left: 20px; /* Distance from the left edge */
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%); /* Adjust to exact center */
+    display: flex;
+    flex-direction: column; /* Arrange links in a column */
+    gap: 15px; /* Space between icons */
+  }
+  
+  .social-icon {
+    font-size: 2rem; /* Increase icon size */
+    color: #222; /* Dark color */
+    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+  }
+  
+  .social-icon:hover {
+    color: #0A78FF; /* Highlight color on hover */
+    transform: scale(1.2); /* Slight zoom effect */
+  }
+  
+  /* CTA Button */
+  .cta-button {
+    padding: 40px;
+    background: #ff9800;
+    color: white;
+    border-radius: 10px;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+  
+  .cta-button:hover {
+    background: #e68900;
+  }
+
+  .about-heading2{
+    font-size: 3.2rem;
+    font-weight: bold;
+    line-height: 1.3;
+    color: #222 !important;
+  }
+  

@@ -1,0 +1,36 @@
+name: ZAP Security Scanning
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+  schedule:
+    - cron: '0 0 * * 0'
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  zap-api-full-scan:
+    runs-on: ubuntu-latest
+    name: ZAP API Full Scan (Seeded)
+
+    steps:
+      - name: Run ZAP Full Scan on APIs
+        uses: zaproxy/action-full-scan@v0.10.0
+        with:
+          target: 'https://api.expertisestation.com'
+          cmd_options: '-a'
+          fail_action: false
+  zap-frontend-full-scan:
+    runs-on: ubuntu-latest
+    name: ZAP Frontend Full Scan
+
+    steps:
+      - name: Run ZAP Full Scan on Frontend
+        uses: zaproxy/action-full-scan@v0.10.0
+        with:
+          target: 'https://www.expertisestation.com'
+          fail_action: false

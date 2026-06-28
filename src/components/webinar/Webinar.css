@@ -1,0 +1,82 @@
+/* Speaker card styles */
+.speaker-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 520px;
+  padding: 2rem !important;
+}
+
+.speaker-image-container {
+  flex-shrink: 0;
+  width: 128px;
+  height: 128px;
+  margin-bottom: 1.5rem;
+}
+
+.speaker-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 3px solid #e5e7eb;
+}
+
+.speaker-name {
+  font-size: 1.5rem !important;
+  line-height: 2rem;
+  margin-bottom: 0.75rem;
+  height: auto;
+  font-weight: 600;
+  min-height: 2.5rem; /* Consistent height for names */
+}
+
+.speaker-title {
+  font-size: 1.125rem;
+  line-height: 1.5;
+  min-height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 0.5rem;
+  margin-bottom: 0.75rem !important;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.speaker-experience {
+  font-size: 0.875rem !important;
+  padding: 0.5rem 1rem;
+  background-color: #f3f4f6;
+  border-radius: 9999px;
+  margin: 0.5rem 0 1rem 0 !important;
+  min-height: 1.5rem; /* Consistent height for experience */
+}
+
+.speaker-bio {
+  font-size: 1rem;
+  line-height: 1.625;
+  max-width: 90%;
+  height: auto;
+  min-height: 120px; /* Consistent height for bios */
+  display: flex;
+  align-items: center;
+  text-align: center;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .speaker-card {
+    min-height: 480px;
+    padding: 1.5rem !important;
+  }
+
+  .speaker-bio {
+    max-width: 95%;
+  }
+}

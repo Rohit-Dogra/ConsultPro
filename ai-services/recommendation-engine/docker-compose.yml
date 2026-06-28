@@ -1,0 +1,44 @@
+# MySQL + Redis for the recommendation engine (same DB name as your main app, e.g. exp).
+# Main app tables (users, product_categories, expert_profiles, bookings, …) must exist
+# before applying schema/001 and 002 (foreign keys). Map host port 3307 → container 3306
+# so a local MySQL on 3306 does not clash.
+
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: recommendation-engine-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-rootpass}
+      MYSQL_DATABASE: ${MYSQL_DATABASE:-exp}
+    ports:
+      - "${MYSQL_HOST_PORT:-3307}:3306"
+    volumes:
+      - rec_engine_mysql_data:/var/lib/mysql
+    command: >
+      --character-set-server=utf8mb4
+      --collation-server=utf8mb4_unicode_ci
+      --default-authentication-plugin=mysql_native_password
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h 127.0.0.1 -uroot -p$$MYSQL_ROOT_PASSWORD || exit 1"]
+      interval: 8s
+      timeout: 5s
+      retries: 10
+      start_period: 30s
+
+  redis:
+    image: redis:7-alpine
+    container_name: recommendation-engine-redis
+    ports:
+      - "${REDIS_HOST_PORT:-6379}:6379"
+    command: redis-server --appendonly yes
+    volumes:
+      - rec_engine_redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+
+volumes:
+  rec_engine_mysql_data:
+  rec_engine_redis_data:
